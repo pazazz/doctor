@@ -36,8 +36,11 @@ create table doctor_info
 	doctor_tel		  int,			/* 医生电话 */
 	doctor_mail		  text,			/* 医生邮箱 */
 	hospital_id 	id,				/* 医生所在医院 */
+	doctor_dep		  text,			/* 医生科室 */
 	doctor_level text,				/* 医生职称 */
 	doctor_license int,				/* 医师编号 */
+	docotr_photo blob				/* 医师相片 */
+	docotr_
 
 	FOREIGN KEY (patient_tel) REFERENCES user(uer_tel)
 	FOREIGN KEY (hospital_id) REFERENCES hospital_info(hospital_id)
@@ -71,7 +74,7 @@ create table invitation_order_info
 	order_patients_num int,				/* 邀约人数 */
 	order_real_pat_num int,				/* 实际诊疗人数 */
 	order_price int,					/* 邀约价格 */
-	order_status int,					/* 邀约状态: 取消，正常 */
+	order_status int,					/* 邀约状态: 四种状态 */
 	order_disease_desc text,			/* 备注信息: 可选病症，医生科室信息 */
 
 	FOREIGN KEY (doctor_id) REFERENCES doctor_info(doctor_id)
